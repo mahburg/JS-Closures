@@ -254,15 +254,20 @@ to 5. What we need to do is console.log(i) so that it logs like so:
 
  Fix the code below to log the desired output.
  */
- var con = function (i) {
+//  var log = function (i) {
+//    return function () {
+//      console.log(i);
+//    }
+//  }
+
+function timeOutCounter() {
+var log = function (i) {
    return function () {
      console.log(i);
    }
- }
-
-function timeOutCounter() {
+ } 
   for (var i = 0; i <= 5; i++) {
-    setTimeout(con(i), i * 1000)
+    setTimeout(log(i), i * 1000)
   }
 }
 timeOutCounter();
